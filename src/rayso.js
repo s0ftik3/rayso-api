@@ -232,8 +232,8 @@ module.exports = class RaySo {
                 this.title,
             )}&theme=${this.theme}&spacing=${this.padding}&background=${
                 this.background
-            }&darkMode=${this.darkMode}&code=${this.stringToBase64(
-                code,
+            }&darkMode=${this.darkMode}&code=${encodeURIComponent(
+                this.stringToBase64(code),
             )}&language=${encodeURIComponent(this.language)}`;
         } catch (err) {
             console.error(err);
