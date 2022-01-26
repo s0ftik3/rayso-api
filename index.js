@@ -5,4 +5,4 @@
  * Source: ray.so
  * Author: github.com/s0ftik3
  */
-require('./src/rayso');
+module.exports = require('./src/rayso');
