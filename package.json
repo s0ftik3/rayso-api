@@ -1,0 +1,20 @@
+{
+    "name": "rayso-api",
+    "version": "1.0.0",
+    "description": "Unofficial API for ray.so that turns your code into beautiful images.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "keywords": [
+        "ray.so",
+        "snippet",
+        "api",
+        "code preview"
+    ],
+    "author": "Vyacheslav <slava021323@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "puppeteer-core": "^13.1.2"
+    }
+}
