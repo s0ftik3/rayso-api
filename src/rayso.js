@@ -137,6 +137,8 @@ module.exports = class RaySo {
                 document.querySelector(
                     '#frame > div.drag-control-points > div.handle.right',
                 ).style.display = 'none';
+                document.querySelector('#app > main > section').style.display =
+                    'none';
             });
 
             if (this.debug) {
