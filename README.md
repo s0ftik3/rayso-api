@@ -2,6 +2,7 @@
 
 [![version](https://badgen.net/npm/v/rayso-api)](https://npmjs.com/package/rayso-api)
 [![downloads](https://badgen.net/npm/dm/rayso-api)](https://www.npmjs.com/package/rayso-api)
+[![author on telegram](https://img.shields.io/badge/Author%20on%20-Telegram-blue)](https://t.me/vychs)
 
 [![logotype](/assets/rayso-api-preview.png)](https://npmjs.com/package/rayso-api)
 
@@ -12,6 +13,11 @@ Unofficial API for ray.so that turns your code into beautiful images. Choose fro
 -   [Installing](#installing)
 -   [Usage](#usage)
 -   [Parameters](#parameters)
+-   [Examples](#examples)
+    -   [Default](#default-output)
+    -   [Custom](#custom-parameters)
+    -   [No Background](#output-without-background)
+-   [Credits](#credits)
 
 ## Installing
 
@@ -22,7 +28,7 @@ $ npm i rayso-api
 ## Usage
 
 ```javascript
-const RaySo = require('../src/rayso');
+const RaySo = require('rayso-api');
 const raySo = new RaySo({
     // parameters, if you want to customize the output
     // you'll find detailed info about parameters below
@@ -38,6 +44,8 @@ raySo
     });
 ```
 
+👮‍♂️ **Attention!** The API will not work if you don't have any kind of Chrome browser (Chromium). So, make sure to set your full local path to `chrome.exe` in `broswerPath` parameter (or any other execution file of the browser based on Chromium).
+
 ## Parameters
 
 | Parameter      | Default value                                               | Type             | Description                                                                                                                                    |
@@ -52,8 +60,21 @@ raySo
 | `browserPath`  | `"C:\Program Files\ Google\Chrome\Application \chrome.exe"` | String           | Local path to the browser (Chrome). You can leave it, if it's your home PC and you have Chrome installed.                                      |
 | `debug`        | `false `                                                    | Boolean          | If enabled, it will show messages in the console during code execution.                                                                        |
 
+## Examples
+
+### Default output
+
 ```javascript
-const RaySo = require('../src/rayso');
+const RaySo = require('rayso-api');
+const raySo = new RaySo();
+```
+
+[![output](/examples/default.png)](https://npmjs.com/package/rayso-api)
+
+### Custom parameters
+
+```javascript
+const RaySo = require('rayso-api');
 const raySo = new RaySo({
     title: 'Custom Title',
     theme: 'candy',
@@ -63,7 +84,19 @@ const raySo = new RaySo({
 });
 ```
 
+[![output](/examples/custom.png)](https://npmjs.com/package/rayso-api)
+
+### Output without background
+
+```javascript
+const RaySo = require('rayso-api');
+const raySo = new RaySo({ background: false });
+```
+
+[![output](/examples/noBackground.png)](https://npmjs.com/package/rayso-api)
+
+You'll find more examples in the `./examples` folder.
+
 ## Credits
 
--   Source is [ray.so](https://ray.so).
--   Author on Telegram [@vychs](https://t.me/vychs).
+-   The source is [ray.so](https://ray.so) website.

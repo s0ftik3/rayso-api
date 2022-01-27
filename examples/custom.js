@@ -8,12 +8,16 @@
  */
 
 const RaySo = require('../src/rayso');
-const raySo = new RaySo();
+const raySo = new RaySo({
+    title: 'Custom Title',
+    theme: 'candy',
+    padding: 32,
+    language: 'javascript',
+    localPreview: true,
+});
 
 raySo
-    .cook(
-        `const foo = () => console.log('This is the output with default parameters');`,
-    )
+    .cook(`console.log('Hello, World!');`)
     .then((response) => {
         console.log(
             '> Received an image buffer. Buffer length: %s',

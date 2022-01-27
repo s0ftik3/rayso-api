@@ -8,12 +8,10 @@
  */
 
 const RaySo = require('../src/rayso');
-const raySo = new RaySo();
+const raySo = new RaySo({ background: false });
 
 raySo
-    .cook(
-        `const foo = () => console.log('This is the output with default parameters');`,
-    )
+    .cook(`console.log('This is an example of output without background');`)
     .then((response) => {
         console.log(
             '> Received an image buffer. Buffer length: %s',
