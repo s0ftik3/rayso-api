@@ -3,6 +3,8 @@
     "version": "1.0.4",
     "description": "Unofficial API for ray.so that turns your code into beautiful images.",
     "main": "index.js",
+    "homepage": "https://github.com/s0ftik3/rayso-api#readme",
+    "repository": "https://github.com/s0ftik3/rayso-api",
     "scripts": {
         "start": "node index.js"
     },
