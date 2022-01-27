@@ -1,6 +1,6 @@
 {
     "name": "rayso-api",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "Unofficial API for ray.so that turns your code into beautiful images.",
     "main": "index.js",
     "homepage": "https://github.com/s0ftik3/rayso-api#readme",
