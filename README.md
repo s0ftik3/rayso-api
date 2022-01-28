@@ -115,7 +115,7 @@ const raySo = new RaySo({ background: false });
 
 ## Themes
 
-These are all themes available themes, so far. As soon Ray.So has new theme, it will appear here. Default theme `breeze` is not listed here, you saw it in the first picture of this README.
+These are all the available themes, so far. As soon Ray.So has a new theme, it will appear here. Default theme `breeze` is not listed here, you saw it in the first picture of this README.
 
 ### Candy
 
