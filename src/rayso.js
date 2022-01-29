@@ -11,16 +11,59 @@ const puppeteer = require('puppeteer-core');
 
 module.exports = class RaySo {
     /**
-     * * title — Title above the box. Default is 'Untitled-1'
-     * * theme — The box's theme. Default is breeze. Available themes: breeze, candy, crimson, falcon, meadow, midnight, raindrop, sunset
-     * * background — Show background. Default is true
-     * * darkMode — Dark mode of the theme. Default is true
-     * * padding — Padding between box and borders. Default is 32, could be: 16, ✔, 64, 128
-     * * language — Programming language of the code. Default is auto
-     * * localPreview — Creates local file (example.png) of the output. Buffer is still being returned. Default is false
-     * * browserPath — Full path to your chrome browser's folder. Default is C:\Program Files\Google\Chrome\Application\chrome.exe
-     * * debug — Set true if you want to see information in the terminal when the picture is being generated.
-     */
+     * @param {Object} [options]
+            Query parameters to be used to 
+            construct the completed request.
+        * @param {String} [options.title]
+            The title of the code snippet.
+            Default is 'Untitled-1'.
+        * @param {('breeze'|'candy'|'crimson'|'falcon'|'meadow'|'midnight'|'raindrop'|'sunset')} [options.theme]
+            The color scheme you want the
+            uploaded code to have.
+            Default is breeze.
+        * @param {(
+            true|
+            false
+        )} [options.background]
+            Hide or show background.
+            Default is true.
+        * @param {(
+            true|
+            false
+        )} [options.darkMode]
+            Will determine whether the background
+            behind the text is light or dark.
+            Default is true.
+        * @param {(
+            '16'|
+            '32'|
+            '64'|
+            '128'
+        )} [options.padding]
+            Determines the size of the padding
+            around the content of the uploaded text.
+            Default is 32.
+        * @param {String} [options.language]
+            The language the code is in.
+            Default is auto.
+        * @param {(
+            true|
+            false
+        )} [options.localPreview]
+            Creates local file (example.png) of the output. 
+            Buffer is still being returned. 
+            Default is false.
+        * @param {String} [options.browserPath]
+            Full path to your chrome browser's folder. 
+            Default is C:\Program Files\Google\Chrome\Application\chrome.exe
+        * @param {(
+            true|
+            false
+        )} [options.debug]
+            Will show information in the terminal
+            about the image generation process.
+            Default is false.
+    */
     constructor({
         title = '',
         theme = 'breeze',
