@@ -15,7 +15,7 @@ module.exports = class RaySo {
      * * theme — The box's theme. Default is breeze. Available themes: breeze, candy, crimson, falcon, meadow, midnight, raindrop, sunset
      * * background — Show background. Default is true
      * * darkMode — Dark mode of the theme. Default is true
-     * * padding — Padding between box and borders. Default is 64, could be: 16, 32, ✔, 128
+     * * padding — Padding between box and borders. Default is 32, could be: 16, ✔, 64, 128
      * * language — Programming language of the code. Default is auto
      * * localPreview — Creates local file (example.png) of the output. Buffer is still being returned. Default is false
      * * browserPath — Full path to your chrome browser's folder. Default is C:\Program Files\Google\Chrome\Application\chrome.exe
@@ -26,7 +26,7 @@ module.exports = class RaySo {
         theme = 'breeze',
         background = true,
         darkMode = true,
-        padding = 64,
+        padding = 32,
         language = 'auto',
         localPreview = false,
         browserPath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
@@ -378,7 +378,7 @@ module.exports = class RaySo {
 
             if (typeof params.language !== 'string') {
                 errors.push('Language parameter must be type of string.');
-            } else if (!languages.includes(params.language)) {
+            } else if (!languages.includes(params.language.toLowerCase())) {
                 errors.push(
                     "There is no such a language. Use 'auto' to define code language automatically.",
                 );
