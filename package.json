@@ -3,10 +3,12 @@
     "version": "1.0.10",
     "description": "Unofficial API for ray.so that turns your code into beautiful images.",
     "main": "index.js",
+    "type": "module",
     "homepage": "https://github.com/s0ftik3/rayso-api#readme",
     "repository": "https://github.com/s0ftik3/rayso-api",
     "scripts": {
-        "start": "node index.js"
+        "test": "node examples/default.js && node examples/custom.js && node examples/noBackground.js",
+        "prettier": "npx prettier --write ."
     },
     "keywords": [
         "ray.so",
@@ -17,6 +19,9 @@
     "author": "Vyacheslav <slava021323@gmail.com>",
     "license": "MIT",
     "dependencies": {
-        "puppeteer-core": "^13.1.2"
+        "puppeteer": "^19.3.0"
+    },
+    "devDependencies": {
+        "prettier": "^2.8.0"
     }
 }

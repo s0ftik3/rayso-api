@@ -7,19 +7,19 @@
  * Author: github.com/s0ftik3
  */
 
-const RaySo = require('../src/rayso');
-const raySo = new RaySo();
+import RaySo from '../index.js'
+const raySo = new RaySo({})
 
 raySo
     .cook(
-        `const foo = () => console.log('This is the output with default parameters');`,
+        `const foo = () => console.log('This is the output with default parameters');`
     )
-    .then((response) => {
+    .then(response => {
         console.log(
             '> Received an image buffer. Buffer length: %s',
-            response.length,
-        );
+            response.length
+        )
     })
-    .catch((err) => {
-        console.error(err);
-    });
+    .catch(err => {
+        console.error(err)
+    })

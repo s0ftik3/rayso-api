@@ -6,4 +6,13 @@
  * Source: ray.so
  * Author: github.com/s0ftik3
  */
-module.exports = require('./src/rayso');
+
+import { RaySo } from './src/rayso.js'
+import {
+    CardTheme,
+    CardPadding,
+    CardProgrammingLanguage,
+} from './src/entities/options.js'
+
+export { RaySo, CardTheme, CardPadding, CardProgrammingLanguage }
+export default RaySo

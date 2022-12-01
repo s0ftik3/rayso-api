@@ -7,23 +7,29 @@
  * Author: github.com/s0ftik3
  */
 
-const RaySo = require('../src/rayso');
+import RaySo, {
+    CardTheme,
+    CardPadding,
+    CardProgrammingLanguage,
+} from '../index.js'
 const raySo = new RaySo({
     title: 'Custom Title',
-    theme: 'candy',
-    padding: 32,
-    language: 'javascript',
+    theme: CardTheme.CANDY,
+    padding: CardPadding.md,
+    language: CardProgrammingLanguage.JS,
+    debug: true,
     localPreview: true,
-});
+    localPreviewPath: '/Users/s0ftik3/rayso_screenshots',
+})
 
 raySo
     .cook(`console.log('Hello, World!');`)
-    .then((response) => {
+    .then(response => {
         console.log(
             '> Received an image buffer. Buffer length: %s',
-            response.length,
-        );
+            response.length
+        )
     })
-    .catch((err) => {
-        console.error(err);
-    });
+    .catch(err => {
+        console.error(err)
+    })

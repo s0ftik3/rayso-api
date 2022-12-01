@@ -7,17 +7,17 @@
  * Author: github.com/s0ftik3
  */
 
-const RaySo = require('../src/rayso');
-const raySo = new RaySo({ background: false });
+import RaySo from '../index.js'
+const raySo = new RaySo({ background: false })
 
 raySo
     .cook(`console.log('This is an example of output without background');`)
-    .then((response) => {
+    .then(response => {
         console.log(
             '> Received an image buffer. Buffer length: %s',
-            response.length,
-        );
+            response.length
+        )
     })
-    .catch((err) => {
-        console.error(err);
-    });
+    .catch(err => {
+        console.error(err)
+    })

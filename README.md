@@ -36,55 +36,49 @@ $ npm i rayso-api
 ## Usage
 
 ```javascript
-const RaySo = require('rayso-api');
+const RaySo = require('rayso-api')
 const raySo = new RaySo({
     // parameters, if you want to customize the output
     // you'll find detailed info about parameters below
-});
+})
 
 raySo
     .cook(`console.log('Hello, World!');`)
-    .then((response) => {
+    .then(response => {
         // response is image buffer
     })
-    .catch((err) => {
-        console.error(err);
-    });
+    .catch(err => {
+        console.error(err)
+    })
 ```
 
 👮‍♂️ **Attention!** The API will not work if you don't have any kind of Chrome browser (Chromium). So, make sure to set your full local path to `chrome.exe` in `broswerPath` parameter (or any other execution file of the browser based on Chromium).
 
 ```javascript
-const RaySo = require('rayso-api');
-const raySo = new RaySo({
-    // The default path in the API is C:\Program Files\Google\Chrome\Application\chrome.exe
-    // If your browser located somewhere else, specify it in browserPath parameter.
-    // If it's the same as default one, just don't pass this parameter.
-    browserPath: '...your path',
-});
+const RaySo = require('rayso-api')
+const raySo = new RaySo()
 ```
 
 ## Parameters
 
-| Parameter      | Default value                                               | Type             | Description                                                                                                                                    |
-| -------------- | ----------------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title `       | `"Untitled-1"`                                              | String           | The title will be displayed on top of the code box.                                                                                            |
-| `theme`        | `"breeze"`                                                  | String           | There are several options of how your box will look like. Available themes: breeze, candy, crimson, falcon, meadow, midnight, raindrop, sunset |
-| `background`   | `true`                                                      | Boolean          | If disabled, it will create an image of code box only, without background.                                                                     |
-| `darkMode`     | `true`                                                      | Boolean          | If disabled, it will change your theme to its light version.                                                                                   |
-| `padding`      | `32`                                                        | String or Number | Distance between borders and code box. Available values: 16, 32, 64 and 128.                                                                   |
-| `language`     | `"auto"`                                                    | String           | You better leave it auto :/ However, you can try to pass some language name and if it worked, good for you!                                    |
-| `localPreview` | `false`                                                     | Boolean          | If enabled, it will create example.png image file of the output in the current directory.                                                      |
-| `browserPath`  | `"C:\Program Files\ Google\Chrome\Application \chrome.exe"` | String           | Local path to the browser (Chrome). You can leave it, if it's your home PC and you have Chrome installed.                                      |
-| `debug`        | `false `                                                    | Boolean          | If enabled, it will show messages in the console during code execution.                                                                        |
+| Parameter      | Default value  | Type             | Description                                                                                                                                    |
+| -------------- | -------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title `       | `"Untitled-1"` | String           | The title will be displayed on top of the code box.                                                                                            |
+| `theme`        | `"breeze"`     | String           | There are several options of how your box will look like. Available themes: breeze, candy, crimson, falcon, meadow, midnight, raindrop, sunset |
+| `background`   | `true`         | Boolean          | If disabled, it will create an image of code box only, without background.                                                                     |
+| `darkMode`     | `true`         | Boolean          | If disabled, it will change your theme to its light version.                                                                                   |
+| `padding`      | `32`           | String or Number | Distance between borders and code box. Available values: 16, 32, 64 and 128.                                                                   |
+| `language`     | `"auto"`       | String           | You better leave it auto :/ However, you can try to pass some language name and if it worked, good for you!                                    |
+| `localPreview` | `false`        | Boolean          | If enabled, it will create example.png image file of the output in the current directory.                                                      |
+| `debug`        | `false `       | Boolean          | If enabled, it will show messages in the console during code execution.                                                                        |
 
 ## Examples
 
 ### Default output
 
 ```javascript
-const RaySo = require('rayso-api');
-const raySo = new RaySo();
+const RaySo = require('rayso-api')
+const raySo = new RaySo()
 ```
 
 [![output](https://i.ibb.co/Vv9rD4H/default.png)](https://npmjs.com/package/rayso-api)
@@ -92,14 +86,14 @@ const raySo = new RaySo();
 ### Custom parameters
 
 ```javascript
-const RaySo = require('rayso-api');
+const RaySo = require('rayso-api')
 const raySo = new RaySo({
     title: 'Custom Title',
     theme: 'candy',
     padding: 32,
     language: 'javascript',
     localPreview: true,
-});
+})
 ```
 
 [![output](https://i.ibb.co/Px9C24J/custom.png)](https://npmjs.com/package/rayso-api)
@@ -107,8 +101,8 @@ const raySo = new RaySo({
 ### Output without background
 
 ```javascript
-const RaySo = require('rayso-api');
-const raySo = new RaySo({ background: false });
+const RaySo = require('rayso-api')
+const raySo = new RaySo({ background: false })
 ```
 
 [![output](https://i.ibb.co/qspMB4t/no-Background.png)](https://npmjs.com/package/rayso-api)
@@ -120,8 +114,8 @@ These are all the available themes, so far. As soon Ray.So has a new theme, it w
 ### Candy
 
 ```javascript
-const RaySo = require('rayso-api');
-const raySo = new RaySo({ theme: 'candy' });
+const RaySo = require('rayso-api')
+const raySo = new RaySo({ theme: 'candy' })
 ```
 
 [![candy](https://i.ibb.co/pQnX6pw/candy.png)](https://npmjs.com/package/rayso-api)
@@ -129,8 +123,8 @@ const raySo = new RaySo({ theme: 'candy' });
 ### Crimson
 
 ```javascript
-const RaySo = require('rayso-api');
-const raySo = new RaySo({ theme: 'crimson' });
+const RaySo = require('rayso-api')
+const raySo = new RaySo({ theme: 'crimson' })
 ```
 
 [![crimson](https://i.ibb.co/qkYB36S/crimson.png)](https://npmjs.com/package/rayso-api)
@@ -138,8 +132,8 @@ const raySo = new RaySo({ theme: 'crimson' });
 ### Falcon
 
 ```javascript
-const RaySo = require('rayso-api');
-const raySo = new RaySo({ theme: 'falcon' });
+const RaySo = require('rayso-api')
+const raySo = new RaySo({ theme: 'falcon' })
 ```
 
 [![falcon](https://i.ibb.co/w7KdqR5/falcon.png)](https://npmjs.com/package/rayso-api)
@@ -147,8 +141,8 @@ const raySo = new RaySo({ theme: 'falcon' });
 ### Meadow
 
 ```javascript
-const RaySo = require('rayso-api');
-const raySo = new RaySo({ theme: 'meadow' });
+const RaySo = require('rayso-api')
+const raySo = new RaySo({ theme: 'meadow' })
 ```
 
 [![meadow](https://i.ibb.co/xJnMc10/meadow.png)](https://npmjs.com/package/rayso-api)
@@ -156,8 +150,8 @@ const raySo = new RaySo({ theme: 'meadow' });
 ### Midnight
 
 ```javascript
-const RaySo = require('rayso-api');
-const raySo = new RaySo({ theme: 'midnight' });
+const RaySo = require('rayso-api')
+const raySo = new RaySo({ theme: 'midnight' })
 ```
 
 [![midnight](https://i.ibb.co/4jng8Fs/midnight.png)](https://npmjs.com/package/rayso-api)
@@ -165,8 +159,8 @@ const raySo = new RaySo({ theme: 'midnight' });
 ### Raindrop
 
 ```javascript
-const RaySo = require('rayso-api');
-const raySo = new RaySo({ theme: 'raindrop' });
+const RaySo = require('rayso-api')
+const raySo = new RaySo({ theme: 'raindrop' })
 ```
 
 [![raindrop](https://i.ibb.co/jbjYcVf/raindrop.png)](https://npmjs.com/package/rayso-api)
@@ -174,8 +168,8 @@ const raySo = new RaySo({ theme: 'raindrop' });
 ### Sunset
 
 ```javascript
-const RaySo = require('rayso-api');
-const raySo = new RaySo({ theme: 'sunset' });
+const RaySo = require('rayso-api')
+const raySo = new RaySo({ theme: 'sunset' })
 ```
 
 [![sunset](https://i.ibb.co/Q8rFCVn/sunset.png)](https://npmjs.com/package/rayso-api)
