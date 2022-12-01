@@ -36,7 +36,7 @@ $ npm i rayso-api
 ## Usage
 
 ```javascript
-const RaySo = require('rayso-api')
+import RaySo from 'rayso-api'
 const raySo = new RaySo({
     // parameters, if you want to customize the output
     // you'll find detailed info about parameters below
@@ -55,29 +55,30 @@ raySo
 👮‍♂️ **Attention!** The API will not work if you don't have any kind of Chrome browser (Chromium). So, make sure to set your full local path to `chrome.exe` in `broswerPath` parameter (or any other execution file of the browser based on Chromium).
 
 ```javascript
-const RaySo = require('rayso-api')
+import RaySo from 'rayso-api'
 const raySo = new RaySo()
 ```
 
 ## Parameters
 
-| Parameter      | Default value  | Type             | Description                                                                                                                                    |
-| -------------- | -------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title `       | `"Untitled-1"` | String           | The title will be displayed on top of the code box.                                                                                            |
-| `theme`        | `"breeze"`     | String           | There are several options of how your box will look like. Available themes: breeze, candy, crimson, falcon, meadow, midnight, raindrop, sunset |
-| `background`   | `true`         | Boolean          | If disabled, it will create an image of code box only, without background.                                                                     |
-| `darkMode`     | `true`         | Boolean          | If disabled, it will change your theme to its light version.                                                                                   |
-| `padding`      | `32`           | String or Number | Distance between borders and code box. Available values: 16, 32, 64 and 128.                                                                   |
-| `language`     | `"auto"`       | String           | You better leave it auto :/ However, you can try to pass some language name and if it worked, good for you!                                    |
-| `localPreview` | `false`        | Boolean          | If enabled, it will create example.png image file of the output in the current directory.                                                      |
-| `debug`        | `false `       | Boolean          | If enabled, it will show messages in the console during code execution.                                                                        |
+| Parameter          | Default value      | Type             | Description                                                                                                                                    |
+|--------------------|--------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| `title `           | `"Untitled-1"`     | String           | The title will be displayed on top of the code box.                                                                                            |
+| `theme`            | `"breeze"`         | String           | There are several options of how your box will look like. Available themes: breeze, candy, crimson, falcon, meadow, midnight, raindrop, sunset |
+| `background`       | `true`             | Boolean          | If disabled, it will create an image of code box only, without background.                                                                     |
+| `darkMode`         | `true`             | Boolean          | If disabled, it will change your theme to its light version.                                                                                   |
+| `padding`          | `32`               | String or Number | Distance between borders and code box. Available values: 16, 32, 64 and 128.                                                                   |
+| `language`         | `"auto"`           | String           | You better leave it auto :/ However, you can try to pass some language name and if it worked, good for you!                                    |
+| `localPreview`     | `false`            | Boolean          | If enabled, it will create example.png image file of the output in the current directory.                                                      |
+| `localPreviewPath` | `current directory` | String           | Path to create example files. MacOS, Linux and Windows paths supported.                                                                        |
+| `debug`            | `false`            | Boolean          | If enabled, it will show messages in the console during code execution.                                                                        |
 
 ## Examples
 
 ### Default output
 
 ```javascript
-const RaySo = require('rayso-api')
+import RaySo from 'rayso-api'
 const raySo = new RaySo()
 ```
 
@@ -86,13 +87,19 @@ const raySo = new RaySo()
 ### Custom parameters
 
 ```javascript
-const RaySo = require('rayso-api')
+import RaySo, {
+    CardTheme,
+    CardPadding,
+    CardProgrammingLanguage,
+} from 'rayso-api'
 const raySo = new RaySo({
     title: 'Custom Title',
-    theme: 'candy',
-    padding: 32,
-    language: 'javascript',
+    theme: CardTheme.CANDY,
+    padding: CardPadding.md,
+    language: CardProgrammingLanguage.JS,
+    debug: true,
     localPreview: true,
+    localPreviewPath: '/Users/s0ftik3/rayso_screenshots',
 })
 ```
 
@@ -101,7 +108,7 @@ const raySo = new RaySo({
 ### Output without background
 
 ```javascript
-const RaySo = require('rayso-api')
+import RaySo from 'rayso-api'
 const raySo = new RaySo({ background: false })
 ```
 
@@ -114,7 +121,7 @@ These are all the available themes, so far. As soon Ray.So has a new theme, it w
 ### Candy
 
 ```javascript
-const RaySo = require('rayso-api')
+import RaySo from 'rayso-api'
 const raySo = new RaySo({ theme: 'candy' })
 ```
 
@@ -123,7 +130,7 @@ const raySo = new RaySo({ theme: 'candy' })
 ### Crimson
 
 ```javascript
-const RaySo = require('rayso-api')
+import RaySo from 'rayso-api'
 const raySo = new RaySo({ theme: 'crimson' })
 ```
 
@@ -132,7 +139,7 @@ const raySo = new RaySo({ theme: 'crimson' })
 ### Falcon
 
 ```javascript
-const RaySo = require('rayso-api')
+import RaySo from 'rayso-api'
 const raySo = new RaySo({ theme: 'falcon' })
 ```
 
@@ -141,7 +148,7 @@ const raySo = new RaySo({ theme: 'falcon' })
 ### Meadow
 
 ```javascript
-const RaySo = require('rayso-api')
+import RaySo from 'rayso-api'
 const raySo = new RaySo({ theme: 'meadow' })
 ```
 
@@ -150,7 +157,7 @@ const raySo = new RaySo({ theme: 'meadow' })
 ### Midnight
 
 ```javascript
-const RaySo = require('rayso-api')
+import RaySo from 'rayso-api'
 const raySo = new RaySo({ theme: 'midnight' })
 ```
 
@@ -159,7 +166,7 @@ const raySo = new RaySo({ theme: 'midnight' })
 ### Raindrop
 
 ```javascript
-const RaySo = require('rayso-api')
+import RaySo from 'rayso-api'
 const raySo = new RaySo({ theme: 'raindrop' })
 ```
 
@@ -168,7 +175,7 @@ const raySo = new RaySo({ theme: 'raindrop' })
 ### Sunset
 
 ```javascript
-const RaySo = require('rayso-api')
+import RaySo from 'rayso-api'
 const raySo = new RaySo({ theme: 'sunset' })
 ```
 
