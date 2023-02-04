@@ -52,8 +52,6 @@ raySo
     })
 ```
 
-👮‍♂️ **Attention!** The API will not work if you don't have any kind of Chrome browser (Chromium). So, make sure to set your full local path to `chrome.exe` in `broswerPath` parameter (or any other execution file of the browser based on Chromium).
-
 ```javascript
 import RaySo from 'rayso-api'
 const raySo = new RaySo()
